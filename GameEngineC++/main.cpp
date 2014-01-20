@@ -3,7 +3,7 @@
 //
 // - Known isues -
 //   collison detection for entities is bounding box only, can be inaccurate
-//   there is a conflict when using sprites and drawing shapes, can mess up shapes
+//   if the 0,0 spot on a given sprite sheet is any color but white, the rectangle or quad shapes won't show right
 //
 
 #include "program.h"
@@ -23,10 +23,15 @@ void Program::assetLoader(std::string const& asset)
 {
 	if(asset == "test")
 	{
+		window.setFont("arial.ttf");
+		window.addSpriteSheet("smiley.png");
+		window.addSpriteMap("smiley", sf::Vector2f(0,1), 95, 98);
 		window.setBackgroundColor(sf::Color::Black);
-		window.addCircle("testShape2", sf::Vector2f(200, 50), sf::Color::Cyan, 50);
-		window.addRectangle("testShape3", sf::Vector2f(350,50), 100, 100, sf::Color::Green, sf::Color::Blue, sf::Color::Yellow, sf::Color::Magenta);
-		window.addRectangle("test1" , sf::Vector2f(50,50), 100, 100, sf::Color::Green);
+		window.addCircle("circle1", sf::Vector2f(200, 50), sf::Color::Cyan, 50);
+		window.addRectangle("rectangle1" , sf::Vector2f(50,50), 100, 100, sf::Color::Green);
+		window.addRectangle("rectangle2", sf::Vector2f(350,50), 100, 100, sf::Color::Green, sf::Color::Blue, sf::Color::Yellow, sf::Color::Magenta);
+		window.addText("text1", sf::Vector2f(200,200), sf::Color::Red, 30, "test test test");
+		window.addSprite("sprite1", "smiley", sf::Vector2f(50,200));
 	}
 }
 
