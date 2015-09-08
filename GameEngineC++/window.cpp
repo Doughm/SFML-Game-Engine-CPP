@@ -9,9 +9,9 @@ Window::Window() :PI(3.141592653589793)
 {
 	programName = "Asteroids";
 	loadINI.setFile("engine.ini");
-	if(loadINI.fileExists("engine.ini"))
+	if (loadINI.fileExists("engine.ini"))
 	{
-		if(loadINI.inFile("ResolutionWidth")==true)
+		if (loadINI.inFile("ResolutionWidth") == true)
 		{
 			resolutionX = Convert::stringToInt(loadINI.getValue("ResolutionWidth"));
 		}
@@ -19,7 +19,7 @@ Window::Window() :PI(3.141592653589793)
 		{
 			resolutionX = 640;
 		}
-		if(loadINI.inFile("ResolutionHeight")==true)
+		if (loadINI.inFile("ResolutionHeight") == true)
 		{
 			resolutionY = Convert::stringToInt(loadINI.getValue("ResolutionHeight"));
 		}
@@ -27,7 +27,7 @@ Window::Window() :PI(3.141592653589793)
 		{
 			resolutionY = 480;
 		}
-		if(loadINI.inFile("FPSCapped")==true)
+		if (loadINI.inFile("FPSCapped") == true)
 		{
 			FPSLimit = Convert::stringToBool(loadINI.getValue("FPSCapped"));
 		}
@@ -35,7 +35,7 @@ Window::Window() :PI(3.141592653589793)
 		{
 			FPSLimit = true;
 		}
-		if(loadINI.inFile("FPSLimit")==true)
+		if (loadINI.inFile("FPSLimit") == true)
 		{
 			fps = Convert::stringToInt(loadINI.getValue("FPSLimit"));
 		}
@@ -54,7 +54,7 @@ Window::Window() :PI(3.141592653589793)
 
 	keyboardDown.clear();
 	mouseClick.clear();
-	updateSpeed = 1000000/(double)fps;
+	updateSpeed = 1000000 / (double)fps;
 	gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Close);
 	background = sf::Color::White;
 	state = state.Default;
@@ -69,57 +69,57 @@ std::string Window::inputKeyboard()
 {
 	tempStr.clear();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		tempStr.append("A");
+		tempStr.append("LetrA");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
-		tempStr.append("B");
+		tempStr.append("LetrB");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
-		tempStr.append("C");
+		tempStr.append("LetrC");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		tempStr.append("D");
+		tempStr.append("LetrD");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-		tempStr.append("E");
+		tempStr.append("LetrE");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-		tempStr.append("F");
+		tempStr.append("LetrF");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
-		tempStr.append("G");
+		tempStr.append("LetrG");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-		tempStr.append("H");
+		tempStr.append("LetrH");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
-		tempStr.append("I");
+		tempStr.append("LetrI");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
-		tempStr.append("J");
+		tempStr.append("LetrJ");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
-		tempStr.append("K");
+		tempStr.append("LetrK");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-		tempStr.append("L");
+		tempStr.append("LetrL");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
-		tempStr.append("M");
+		tempStr.append("LetrM");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
-		tempStr.append("N");
+		tempStr.append("LetrN");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::O))
-		tempStr.append("O");
+		tempStr.append("LetrO");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
-		tempStr.append("P");
+		tempStr.append("LetrP");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-		tempStr.append("Q");
+		tempStr.append("LetrQ");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-		tempStr.append("R");
+		tempStr.append("LetrR");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		tempStr.append("S");
+		tempStr.append("LetrS");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
-		tempStr.append("T");
+		tempStr.append("LetrT");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
-		tempStr.append("U");
+		tempStr.append("LetrU");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
-		tempStr.append("V");
+		tempStr.append("LetrV");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		tempStr.append("W");
+		tempStr.append("LetrW");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
-		tempStr.append("X");
+		tempStr.append("LetrX");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
-		tempStr.append("Y");
+		tempStr.append("LetrY");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-		tempStr.append("Z");
+		tempStr.append("LetrZ");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
 		tempStr.append("Num0");
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
@@ -275,57 +275,57 @@ std::string Window::inputKeyboard()
 std::string Window::inputKeyboardSingle()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		return "A";
+		return "LetrA";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
-		return "B";
+		return "LetrB";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
-		return "C";
+		return "LetrC";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		return "D";
+		return "LetrD";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-		return "E";
+		return "LetrE";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-		return "F";
+		return "LetrF";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
-		return "G";
+		return "LetrG";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-		return "H";
+		return "LetrH";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
-		return "I";
+		return "LetrI";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
-		return "J";
+		return "LetrJ";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
-		return "K";
+		return "LetrK";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-		return "L";
+		return "LetrL";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
-		return "M";
+		return "LetrM";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
-		return "N";
+		return "LetrN";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::O))
-		return "O";
+		return "LetrO";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
-		return "P";
+		return "LetrP";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-		return "Q";
+		return "LetrQ";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-		return "R";
+		return "LetrR";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		return "S";
+		return "LetrS";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
-		return "T";
+		return "LetrT";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
-		return "U";
+		return "LetrU";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
-		return "V";
+		return "LetrV";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		return "W";
+		return "LetrW";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
-		return "X";
+		return "LetrX";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
-		return "Y";
+		return "LetrY";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-		return "Z";
+		return "LetrZ";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
 		return "Num0";
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
@@ -481,81 +481,81 @@ std::string Window::inputKeyboardSingle()
 std::string Window::inputMouse()
 {
 	tempStr.clear();
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-        tempStr.append("Leftbutton");
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
-        tempStr.append("Rightbutton");
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
-        tempStr.append("Middlebutton");
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton1))
-        tempStr.append("Button3");
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton2))
-        tempStr.append("Button4");
-    return tempStr;
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		tempStr.append("Leftbutton");
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+		tempStr.append("Rightbutton");
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
+		tempStr.append("Middlebutton");
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton1))
+		tempStr.append("Button3");
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton2))
+		tempStr.append("Button4");
+	return tempStr;
 }
 
 //returns one mouse input
 std::string Window::inputMouseSingle()
 {
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-        return "Leftbutton";
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
-            return "Rightbutton";
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
-            return "Middlebutton";
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton1))
-            return "Button3";
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton2))
-        return "Button4";
-    return "";
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		return "Leftbutton";
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+		return "Rightbutton";
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
+		return "Middlebutton";
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton1))
+		return "Button3";
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::XButton2))
+		return "Button4";
+	return "";
 }
 
 //returns any keyboard input once if a key is down
 std::string Window::inputKeyboardDown()
 {
-    tempStr = inputKeyboard();
-    if (tempStr != keyboardDown)
-    {
-        keyboardDown = tempStr;
-        return tempStr;
-    }
-    return "";
+	tempStr = inputKeyboard();
+	if (tempStr != keyboardDown)
+	{
+		keyboardDown = tempStr;
+		return tempStr;
+	}
+	return "";
 }
 
 //returns one keyboard input once if a key is down
 std::string Window::inputKeyboardDownSingle()
 {
-    tempStr = inputKeyboardSingle();
-    if (tempStr != keyboardDown)
-    {
-        keyboardDown = tempStr;
-        return tempStr;
-    }
-    return "";
+	tempStr = inputKeyboardSingle();
+	if (tempStr != keyboardDown)
+	{
+		keyboardDown = tempStr;
+		return tempStr;
+	}
+	return "";
 }
 
 //returns any mouse input once if a button is down
 std::string Window::inputMouseClick()
 {
-    tempStr = inputMouse();
-    if (tempStr != mouseClick)
-    {
-        mouseClick = tempStr;
-        return tempStr;
-    }
-    return "";
+	tempStr = inputMouse();
+	if (tempStr != mouseClick)
+	{
+		mouseClick = tempStr;
+		return tempStr;
+	}
+	return "";
 }
 
 //returns any mouse input once if a button is down
 std::string Window::inputMouseClickSingle()
 {
-    tempStr = inputMouseSingle();
-    if (tempStr != mouseClick)
-    {
-        mouseClick = tempStr;
-        return tempStr;
-    }
-    return "";
+	tempStr = inputMouseSingle();
+	if (tempStr != mouseClick)
+	{
+		mouseClick = tempStr;
+		return tempStr;
+	}
+	return "";
 }
 
 //gets the position of the mouse in screen coordinates
@@ -575,14 +575,14 @@ sf::Vector2f Window::mousePositionView()
 {
 	tempVector.x = (float)sf::Mouse::getPosition(gameWindow).x;
 	tempVector.y = (float)sf::Mouse::getPosition(gameWindow).y;
-    return tempVector;
+	return tempVector;
 }
 
 //takes a quad and copies it into the vertex array
 void Window::copyQuad(Quad const& quad)
 {
 	sf::Vertex *temparray = new sf::Vertex[vertexCount + 4];
-	for(unsigned int i = 0; i < vertexCount; ++i)
+	for (unsigned int i = 0; i < vertexCount; ++i)
 	{
 		temparray[i] = vertexArray[i];
 	}
@@ -599,7 +599,7 @@ void Window::copyQuad(Quad const& quad)
 //takes a quad and copies it into the vertex array
 void Window::copyQuad(Quad const& quad, int place)
 {
-	if(vertexCount != 0)
+	if (vertexCount != 0)
 	{
 		vertexArray[place] = quad.vertex[0];
 		vertexArray[place + 1] = quad.vertex[1];
@@ -639,7 +639,7 @@ void Window::addSpriteMap(std::string const& name, sf::Vector2f const& position,
 }
 
 //adds a quad entity
-void Window::addQuad(std::string const& name, sf::Vertex const& point1, sf::Vertex const& point2, sf::Vertex const& point3,sf::Vertex const& point4)
+void Window::addQuad(std::string const& name, sf::Vertex const& point1, sf::Vertex const& point2, sf::Vertex const& point3, sf::Vertex const& point4)
 {
 	entitys[name].vertex[0] = point1;
 	entitys[name].vertex[1] = point2;
@@ -657,8 +657,8 @@ void Window::addQuad(std::string const& name, sf::Vertex const& point1, sf::Vert
 //adds a sprite entity
 void Window::addSprite(std::string const& name, std::string const& imageName, sf::Vector2f const& position)
 {
-	std::unordered_map<std::string,sf::FloatRect>::iterator spriteMapIterator = spriteMaps.find(imageName);
-	if(spriteMapIterator != spriteMaps.end())
+	std::unordered_map<std::string, sf::FloatRect>::iterator spriteMapIterator = spriteMaps.find(imageName);
+	if (spriteMapIterator != spriteMaps.end())
 	{
 		entitys[name].vertex[0].position.x = position.x;
 		entitys[name].vertex[0].position.y = position.y;
@@ -716,7 +716,7 @@ void Window::addRectangle(std::string const& name, sf::Vector2f const& position,
 }
 
 //adds a rectangle entity
-void Window::addRectangle(std::string const& name, sf::Vector2f const& position, int width, int height, sf::Color const& color1, sf::Color const& color2,sf::Color const& color3,sf::Color const& color4)
+void Window::addRectangle(std::string const& name, sf::Vector2f const& position, int width, int height, sf::Color const& color1, sf::Color const& color2, sf::Color const& color3, sf::Color const& color4)
 {
 	entitys.insert(std::pair<std::string, Quad>());
 	entitys[name].vertex[0].position.x = position.x;
@@ -796,84 +796,84 @@ void Window::addAnimation(std::string const& name, std::vector<std::string> cons
 	animations[name].positions.color[2] = sf::Color::White;
 	animations[name].positions.color[3] = sf::Color::White;
 	animations[name].positions.rotation = 0;
-	animations[name].speed = 1000 -(speed * 500);
+	animations[name].speed = 1000 - (speed * 500);
 	animations[name].positions.firstPosition = vertexCount;
 	copyQuad(animations[name].positions);
 }
 
 //adds X number of entitys of type quad
-void Window::batchAddQuad(int numberToMake, std::string const& name, sf::Vertex const& point1, sf::Vertex const& point2, sf::Vertex const& point3,sf::Vertex const& point4)
+void Window::batchAddQuad(int numberToMake, std::string const& name, sf::Vertex const& point1, sf::Vertex const& point2, sf::Vertex const& point3, sf::Vertex const& point4)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addQuad(name + Convert::intToString(i + 1), point1, point2, point3, point4);
-    }
+	}
 }
 
 //adds X number of entitys of type sprite
 void Window::batchAddSprite(int numberToMake, std::string const& name, std::string const& imageName, sf::Vector2f const& position)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addSprite(name + Convert::intToString(i + 1), imageName, position);
-    }
+	}
 }
 
 //adds X number of entitys of type rectangle
 void Window::batchAddRectangle(int numberToMake, std::string const& name, sf::Vector2f const& position, int height, int width, sf::Color const& color)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addRectangle(name + Convert::intToString(i + 1), position, height, width, color);
-    }
+	}
 }
 
 //adds X number of entitys of type rectangle
-void Window::batchAddRectangle(int numberToMake, std::string const& name, sf::Vector2f const& position, int height, int width, sf::Color const& color1, sf::Color const& color2,sf::Color const& color3, sf::Color const& color4)
+void Window::batchAddRectangle(int numberToMake, std::string const& name, sf::Vector2f const& position, int height, int width, sf::Color const& color1, sf::Color const& color2, sf::Color const& color3, sf::Color const& color4)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addRectangle(name + Convert::intToString(i + 1), position, height, width, color1, color2, color3, color4);
-    }
+	}
 }
 
 //adds X number of entitys of type text
 void Window::batchAddText(int numberToMake, std::string const& name, sf::Vector2f const& position, sf::Color const& color, int size, std::string const& text)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addText(name + Convert::intToString(i + 1), position, color, size, text);
-    }
+	}
 }
 
 //adds X number of entitys of type circle
 void Window::batchAddCircle(int numberToMake, std::string const& name, sf::Vector2f const& position, sf::Color const& color, int radius)
 {
-    for (int i = 0; i < numberToMake; ++i)
-    {
+	for (int i = 0; i < numberToMake; ++i)
+	{
 		addCircle(name + Convert::intToString(i + 1), position, color, radius);
-    }
+	}
 }
 
 //adds X number of entitys of type animation
 void Window::batchAddAnimation(int numberToMake, std::string const& name, std::vector<std::string> const& frames, sf::Vector2f const& position, float speed)
 {
 	for (int i = 0; i < numberToMake; ++i)
-    {
+	{
 		addAnimation(name + Convert::intToString(i + 1), frames, position, speed);
-    }
+	}
 }
 
 //returns the number in the name of a batch entity
 int Window::batchNumber(std::string const& name)
 {
 	tempStr.clear();
-	for(unsigned int i = 0 ; i < name.length(); ++i)
+	for (unsigned int i = 0; i < name.length(); ++i)
 	{
-		if(name[i] == '1' || name[i] == '2' || name[i] == '3' ||
-		   name[i] == '4' || name[i] == '5' || name[i] == '6' ||
-		   name[i] == '7' || name[i] == '8' || name[i] == '9' ||
-		   name[i] == '0')
+		if (name[i] == '1' || name[i] == '2' || name[i] == '3' ||
+			name[i] == '4' || name[i] == '5' || name[i] == '6' ||
+			name[i] == '7' || name[i] == '8' || name[i] == '9' ||
+			name[i] == '0')
 		{
 			tempStr.push_back((name[i]));
 		}
@@ -886,19 +886,19 @@ void Window::deleteEntity(std::string const& name)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles.erase(circleIterator->first);
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text.erase(textIterator->first);
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		vertexArray[animations[name].positions.firstPosition] = sf::Vector2f();
 		vertexArray[animations[name].positions.firstPosition + 1] = sf::Vector2f();
@@ -907,7 +907,7 @@ void Window::deleteEntity(std::string const& name)
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition] = sf::Vector2f();
 		vertexArray[entitys[name].firstPosition + 1] = sf::Vector2f();
@@ -971,7 +971,7 @@ void Window::setBackgroundColor(sf::Color const& color)
 void Window::setAnimationSpeed(std::string const& name, float speed)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].speed = speed;
 	}
@@ -982,44 +982,44 @@ void Window::setColor(std::string const& name, sf::Color const& color)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setFillColor(color);
 		colorMap[name] = color;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setColor(color);
-        colorMap[name] = color;
+		colorMap[name] = color;
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].positions.vertex[0].color = color;
-        animations[name].positions.color[0] = color;
-        animations[name].positions.vertex[1].color = color;
-        animations[name].positions.color[1] = color;
-        animations[name].positions.vertex[2].color = color;
-        animations[name].positions.color[2] = color;
-        animations[name].positions.vertex[3].color = color;
-        animations[name].positions.color[3] = color;
+		animations[name].positions.color[0] = color;
+		animations[name].positions.vertex[1].color = color;
+		animations[name].positions.color[1] = color;
+		animations[name].positions.vertex[2].color = color;
+		animations[name].positions.color[2] = color;
+		animations[name].positions.vertex[3].color = color;
+		animations[name].positions.color[3] = color;
 		copyQuad(animations[name].positions, animations[name].positions.firstPosition);
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		entitys[name].vertex[0].color = color;
-        entitys[name].color[0] = color;
-        entitys[name].vertex[1].color = color;
-        entitys[name].color[1] = color;
-        entitys[name].vertex[2].color = color;
-        entitys[name].color[2] = color;
-        entitys[name].vertex[3].color = color;
-        entitys[name].color[3] = color;
+		entitys[name].color[0] = color;
+		entitys[name].vertex[1].color = color;
+		entitys[name].color[1] = color;
+		entitys[name].vertex[2].color = color;
+		entitys[name].color[2] = color;
+		entitys[name].vertex[3].color = color;
+		entitys[name].color[3] = color;
 		copyQuad(entitys[name], entitys[name].firstPosition);
 	}
 }
@@ -1029,30 +1029,30 @@ void Window::setColor(std::string const& name, sf::Color const& color1, sf::Colo
 {
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].positions.vertex[0].color = color1;
-        animations[name].positions.color[0] = color1;
-        animations[name].positions.vertex[1].color = color2;
-        animations[name].positions.color[1] = color2;
-        animations[name].positions.vertex[2].color = color3;
-        animations[name].positions.color[2] = color3;
-        animations[name].positions.vertex[3].color = color4;
-        animations[name].positions.color[3] = color4;
+		animations[name].positions.color[0] = color1;
+		animations[name].positions.vertex[1].color = color2;
+		animations[name].positions.color[1] = color2;
+		animations[name].positions.vertex[2].color = color3;
+		animations[name].positions.color[2] = color3;
+		animations[name].positions.vertex[3].color = color4;
+		animations[name].positions.color[3] = color4;
 		copyQuad(animations[name].positions, animations[name].positions.firstPosition);
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		entitys[name].vertex[0].color = color1;
-        entitys[name].color[0] = color1;
-        entitys[name].vertex[1].color = color2;
-        entitys[name].color[1] = color2;
-        entitys[name].vertex[2].color = color3;
-        entitys[name].color[2] = color3;
-        entitys[name].vertex[3].color = color4;
-        entitys[name].color[3] = color4;
+		entitys[name].color[0] = color1;
+		entitys[name].vertex[1].color = color2;
+		entitys[name].color[1] = color2;
+		entitys[name].vertex[2].color = color3;
+		entitys[name].color[2] = color3;
+		entitys[name].vertex[3].color = color4;
+		entitys[name].color[3] = color4;
 		copyQuad(entitys[name], entitys[name].firstPosition);
 	}
 }
@@ -1061,18 +1061,18 @@ void Window::setColor(std::string const& name, sf::Color const& color1, sf::Colo
 void Window::setCircleOutline(std::string const& name, sf::Color const& color, int thickness)
 {
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setOutlineColor(color);
 		circles[name].setOutlineThickness((float)thickness);
-    }
+	}
 }
 
 //sets the text of a text entity
 void Window::setText(std::string const& name, std::string const& newText)
 {
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setString(newText);
 	}
@@ -1082,7 +1082,7 @@ void Window::setText(std::string const& name, std::string const& newText)
 void Window::setView(std::string const& name)
 {
 	std::unordered_map<std::string, sf::View>::iterator viewIterator = views.find(name);
-	if(viewIterator != views.end())
+	if (viewIterator != views.end())
 	{
 		gameWindow.setView(views[name]);
 	}
@@ -1093,29 +1093,29 @@ sf::Vector2f Window::getPointOfOrigin(std::string const& name)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		return circles[name].getPosition();
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		return text[name].getPosition();
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].positions.vertex[0].position;
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		return entitys[name].vertex[0].position;
 	}
-	return sf::Vector2f(-1,-1);
+	return sf::Vector2f(-1, -1);
 }
 
 //returns the rotation of an entity [-1 is error]
@@ -1123,25 +1123,25 @@ double Window::getRotation(std::string const& name)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		return circles[name].getRotation();
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		return text[name].getRotation();
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].positions.rotation;
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		return entitys[name].rotation;
 	}
@@ -1152,7 +1152,7 @@ double Window::getRotation(std::string const& name)
 std::string Window::getText(std::string const& name)
 {
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		return text[name].getString();
 	}
@@ -1163,7 +1163,7 @@ std::string Window::getText(std::string const& name)
 bool Window::getAnimationPaused(std::string const& name)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].paused;
 	}
@@ -1174,7 +1174,7 @@ bool Window::getAnimationPaused(std::string const& name)
 bool Window::getAnimationLoops(std::string const& name)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].loops;
 	}
@@ -1185,7 +1185,7 @@ bool Window::getAnimationLoops(std::string const& name)
 int Window::getAnimationFrame(std::string const& name)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].currentFrame;
 	}
@@ -1197,7 +1197,7 @@ Quad Window::getQuad(std::string const& name)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		Quad tempQuad;
 		tempQuad.color[0] = circles[name].getFillColor();
@@ -1215,7 +1215,7 @@ Quad Window::getQuad(std::string const& name)
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		Quad tempQuad;
 		tempQuad.color[0] = text[name].getColor();
@@ -1225,13 +1225,13 @@ Quad Window::getQuad(std::string const& name)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return animations[name].positions;
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		return entitys[name];
 	}
@@ -1248,7 +1248,7 @@ int Window::getVertexArrayCount()
 int Window::getEntitysCount()
 {
 	int tempInt = 0;
-	for(std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
+	for (std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
 	{
 		tempInt++;
 	}
@@ -1259,7 +1259,7 @@ int Window::getEntitysCount()
 int Window::getCirclesCount()
 {
 	int tempInt = 0;
-	for(std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
+	for (std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
 	{
 		tempInt++;
 	}
@@ -1270,7 +1270,7 @@ int Window::getCirclesCount()
 int Window::getTextCount()
 {
 	int tempInt = 0;
-	for(std::unordered_map<std::string, sf::Text>::iterator tempTexItr = text.begin(); tempTexItr != text.end(); ++tempTexItr)
+	for (std::unordered_map<std::string, sf::Text>::iterator tempTexItr = text.begin(); tempTexItr != text.end(); ++tempTexItr)
 	{
 		tempInt++;
 	}
@@ -1281,7 +1281,7 @@ int Window::getTextCount()
 int Window::getAnimationCount()
 {
 	int tempInt = 0;
-	for(std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
+	for (std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
 	{
 		tempInt++;
 	}
@@ -1293,25 +1293,25 @@ std::string Window::getAllEntities()
 {
 	tempStr.clear();
 	//circle
-	for(std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
+	for (std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
 	{
 		tempStr.append(tempCirItr->first);
 		tempStr.push_back('\n');
 	}
 	//text
-	for(std::unordered_map<std::string, sf::Text>::iterator tempTexItr = text.begin(); tempTexItr != text.end(); ++tempTexItr)
+	for (std::unordered_map<std::string, sf::Text>::iterator tempTexItr = text.begin(); tempTexItr != text.end(); ++tempTexItr)
 	{
 		tempStr.append(tempTexItr->first);
 		tempStr.push_back('\n');
 	}
 	//animation
-	for(std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
+	for (std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
 	{
 		tempStr.append(tempAniItr->first);
 		tempStr.push_back('\n');
 	}
 	//quad
-	for(std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
+	for (std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
 	{
 		tempStr.append(tempEntItr->first);
 		tempStr.push_back('\n');
@@ -1330,15 +1330,15 @@ sf::Vector2f Window::getResolution()
 //checks if window is still open, if not ends the program
 bool Window::isOpen()
 {
-	if(gameWindow.pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed)
+	if (gameWindow.pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
 		{
-            gameWindow.close();
+			gameWindow.close();
 		}
-    }
+	}
 
-	if(gameWindow.isOpen()==true)
+	if (gameWindow.isOpen() == true)
 	{
 		return true;
 	}
@@ -1353,26 +1353,26 @@ bool Window::entityExists(std::string const& name)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		return true;
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		return true;
 	}
 	return false;
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		return true;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		return true;
 	}
@@ -1383,7 +1383,7 @@ void Window::moveEntity(std::string const& name, sf::Vector2f const& position)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		tempVector.x = entitys[name].vertex[0].position.x - position.x;
 		tempVector.y = entitys[name].vertex[0].position.y - position.y;
@@ -1407,7 +1407,7 @@ void Window::moveEntity(std::string const& name, sf::Vector2f const& position)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		tempVector.x = animations[name].positions.vertex[0].position.x - position.x;
 		tempVector.y = animations[name].positions.vertex[0].position.y - position.y;
@@ -1431,14 +1431,14 @@ void Window::moveEntity(std::string const& name, sf::Vector2f const& position)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setPosition(position);
 		return;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setPosition(position);
 		return;
@@ -1450,7 +1450,7 @@ void Window::scaleEntity(std::string const& name, float scaler)
 {
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		vertexArray[animations[name].positions.firstPosition + 1].position.x = (vertexArray[animations[name].positions.firstPosition + 1].position.x
 			- vertexArray[animations[name].positions.firstPosition].position.x)
@@ -1468,7 +1468,7 @@ void Window::scaleEntity(std::string const& name, float scaler)
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition + 1].position.x = (vertexArray[entitys[name].firstPosition + 1].position.x
 			- vertexArray[entitys[name].firstPosition].position.x)
@@ -1486,7 +1486,7 @@ void Window::scaleEntity(std::string const& name, float scaler)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		tempVector.x = scaler;
 		tempVector.y = scaler;
@@ -1495,7 +1495,7 @@ void Window::scaleEntity(std::string const& name, float scaler)
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		tempVector.x = scaler;
 		tempVector.y = scaler;
@@ -1509,7 +1509,7 @@ void Window::scaleEntity(std::string const& name, sf::Vector2f const& scaler)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition + 1].position.x = (vertexArray[entitys[name].firstPosition + 1].position.x
 			- vertexArray[entitys[name].firstPosition].position.x)
@@ -1527,7 +1527,7 @@ void Window::scaleEntity(std::string const& name, sf::Vector2f const& scaler)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		vertexArray[animations[name].positions.firstPosition + 1].position.x = (vertexArray[animations[name].positions.firstPosition + 1].position.x
 			- vertexArray[animations[name].positions.firstPosition].position.x)
@@ -1545,14 +1545,14 @@ void Window::scaleEntity(std::string const& name, sf::Vector2f const& scaler)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setScale(scaler);
 		return;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setScale(scaler);
 		return;
@@ -1564,7 +1564,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition].position.x = entitys[name].vertex[0].position.x;
 		vertexArray[entitys[name].firstPosition].position.y = entitys[name].vertex[0].position.y;
@@ -1576,7 +1576,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		entitys[name].rotation = currentAngle - degrees;
 		vertexArray[entitys[name].firstPosition + 1].position.x = entitys[name].vertex[0].position.x + (float)std::cos(PI * entitys[name].rotation / 180.0) * (float)distance;
 		vertexArray[entitys[name].firstPosition + 1].position.y = entitys[name].vertex[0].position.y - (float)std::sin(PI * entitys[name].rotation / 180.0) * (float)distance;
-		
+
 		tempVector.x = entitys[name].vertex[2].position.x - entitys[name].vertex[0].position.x;
 		tempVector.y = entitys[name].vertex[2].position.y - entitys[name].vertex[0].position.y;
 		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
@@ -1584,7 +1584,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		entitys[name].rotation = currentAngle - degrees - (currentAngle * 2);
 		vertexArray[entitys[name].firstPosition + 2].position.x = entitys[name].vertex[0].position.x + (float)std::cos(PI * entitys[name].rotation / 180.0) * (float)distance;
 		vertexArray[entitys[name].firstPosition + 2].position.y = entitys[name].vertex[0].position.y - (float)std::sin(PI * entitys[name].rotation / 180.0) * (float)distance;
-		
+
 		tempVector.x = entitys[name].vertex[3].position.x - entitys[name].vertex[0].position.x;
 		tempVector.y = entitys[name].vertex[3].position.y - entitys[name].vertex[0].position.y;
 		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
@@ -1592,7 +1592,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		entitys[name].rotation = currentAngle - degrees - (currentAngle * 2);
 		vertexArray[entitys[name].firstPosition + 3].position.x = entitys[name].vertex[0].position.x + (float)std::cos(PI * entitys[name].rotation / 180.0) * (float)distance;
 		vertexArray[entitys[name].firstPosition + 3].position.y = entitys[name].vertex[0].position.y - (float)std::sin(PI * entitys[name].rotation / 180.0) * (float)distance;
-		
+
 		if (degrees >= 360 || degrees <= -360)
 		{
 			degrees = (int)degrees % 360;
@@ -1612,9 +1612,9 @@ void Window::rotateEntity(std::string const& name, float degrees)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
-		
+
 		vertexArray[animations[name].positions.firstPosition].position.x = animations[name].positions.vertex[0].position.x;
 		vertexArray[animations[name].positions.firstPosition].position.y = animations[name].positions.vertex[0].position.y;
 
@@ -1625,7 +1625,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		animations[name].positions.rotation = currentAngle - degrees;
 		vertexArray[animations[name].positions.firstPosition + 1].position.x = animations[name].positions.vertex[0].position.x + (float)std::cos(PI * animations[name].positions.rotation / 180.0) * (float)distance;
 		vertexArray[animations[name].positions.firstPosition + 1].position.y = animations[name].positions.vertex[0].position.y - (float)std::sin(PI * animations[name].positions.rotation / 180.0) * (float)distance;
-		
+
 		tempVector.x = animations[name].positions.vertex[2].position.x - animations[name].positions.vertex[0].position.x;
 		tempVector.y = animations[name].positions.vertex[2].position.y - animations[name].positions.vertex[0].position.y;
 		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
@@ -1633,7 +1633,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		animations[name].positions.rotation = currentAngle - degrees - (currentAngle * 2);
 		vertexArray[animations[name].positions.firstPosition + 2].position.x = animations[name].positions.vertex[0].position.x + (float)std::cos(PI * animations[name].positions.rotation / 180.0) * (float)distance;
 		vertexArray[animations[name].positions.firstPosition + 2].position.y = animations[name].positions.vertex[0].position.y - (float)std::sin(PI * animations[name].positions.rotation / 180.0) * (float)distance;
-		
+
 		tempVector.x = animations[name].positions.vertex[3].position.x - animations[name].positions.vertex[0].position.x;
 		tempVector.y = animations[name].positions.vertex[3].position.y - animations[name].positions.vertex[0].position.y;
 		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
@@ -1641,7 +1641,7 @@ void Window::rotateEntity(std::string const& name, float degrees)
 		animations[name].positions.rotation = currentAngle - degrees - (currentAngle * 2);
 		vertexArray[animations[name].positions.firstPosition + 3].position.x = animations[name].positions.vertex[0].position.x + (float)std::cos(PI * animations[name].positions.rotation / 180.0) * (float)distance;
 		vertexArray[animations[name].positions.firstPosition + 3].position.y = animations[name].positions.vertex[0].position.y - (float)std::sin(PI * animations[name].positions.rotation / 180.0) * (float)distance;
-		
+
 		if (degrees >= 360 || degrees <= -360)
 		{
 			degrees = (int)degrees % 360;
@@ -1661,14 +1661,14 @@ void Window::rotateEntity(std::string const& name, float degrees)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setRotation(degrees);
 		return;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setRotation(degrees);
 		return;
@@ -1680,16 +1680,16 @@ void Window::rotateEntityCenter(std::string const& name, float degrees)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		rotateEntity(name, degrees);
 		tempVector.x = entitys[name].vertex[2].position.x;
 		tempVector.y = entitys[name].vertex[2].position.y;
 		tempVector.x = ((entitys[name].vertex[2].position.x - entitys[name].vertex[0].position.x) / 2);
-        tempVector.y = ((entitys[name].vertex[2].position.y - entitys[name].vertex[0].position.y) / 2);
-        currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
-        distance = std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y));
-        entitys[name].rotation = currentAngle - degrees - (currentAngle * 2);
+		tempVector.y = ((entitys[name].vertex[2].position.y - entitys[name].vertex[0].position.y) / 2);
+		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
+		distance = std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y));
+		entitys[name].rotation = currentAngle - degrees - (currentAngle * 2);
 		tempVector.x = entitys[name].vertex[0].position.x + (float)std::cos(PI * entitys[name].rotation / 180.0) * (float)distance;
 		tempVector.y = entitys[name].vertex[0].position.y - (float)std::sin(PI * entitys[name].rotation / 180.0) * (float)distance;
 		middle.x = ((entitys[name].vertex[1].position.x - entitys[name].vertex[0].position.x) / 2) + entitys[name].vertex[0].position.x;
@@ -1697,9 +1697,9 @@ void Window::rotateEntityCenter(std::string const& name, float degrees)
 		middle.x = middle.x - tempVector.x;
 		middle.y = middle.y - tempVector.y;
 		vertexArray[entitys[name].firstPosition].position.x = vertexArray[entitys[name].firstPosition].position.x + middle.x;
-        vertexArray[entitys[name].firstPosition].position.y = vertexArray[entitys[name].firstPosition].position.y + middle.y;
+		vertexArray[entitys[name].firstPosition].position.y = vertexArray[entitys[name].firstPosition].position.y + middle.y;
 		vertexArray[entitys[name].firstPosition + 1].position.x = vertexArray[entitys[name].firstPosition + 1].position.x + middle.x;
-        vertexArray[entitys[name].firstPosition + 1].position.y = vertexArray[entitys[name].firstPosition + 1].position.y + middle.y;
+		vertexArray[entitys[name].firstPosition + 1].position.y = vertexArray[entitys[name].firstPosition + 1].position.y + middle.y;
 		vertexArray[entitys[name].firstPosition + 2].position.x = vertexArray[entitys[name].firstPosition + 2].position.x + middle.x;
 		vertexArray[entitys[name].firstPosition + 2].position.y = vertexArray[entitys[name].firstPosition + 2].position.y + middle.y;
 		vertexArray[entitys[name].firstPosition + 3].position.x = vertexArray[entitys[name].firstPosition + 3].position.x + middle.x;
@@ -1708,15 +1708,15 @@ void Window::rotateEntityCenter(std::string const& name, float degrees)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		rotateEntity(name, degrees);
 		tempVector.x = animations[name].positions.vertex[2].position.x;
 		tempVector.y = animations[name].positions.vertex[2].position.y;
 		tempVector.x = ((animations[name].positions.vertex[2].position.x - animations[name].positions.vertex[0].position.x) / 2);
 		tempVector.y = ((animations[name].positions.vertex[2].position.y - animations[name].positions.vertex[0].position.y) / 2);
-        currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
-        distance = std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y));
+		currentAngle = std::atan2(tempVector.y, tempVector.x) * (180 / PI);
+		distance = std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y));
 		animations[name].positions.rotation = currentAngle - degrees - (currentAngle * 2);
 		tempVector.x = animations[name].positions.vertex[0].position.x + (float)std::cos(PI * animations[name].positions.rotation / 180.0) * (float)distance;
 		tempVector.y = animations[name].positions.vertex[0].position.y - (float)std::sin(PI * animations[name].positions.rotation / 180.0) * (float)distance;
@@ -1741,106 +1741,106 @@ bool Window::isWithin(std::string const& name, sf::Vector2f const& point)
 {
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		if (point.x >= circles[name].getPosition().x && point.y >= circles[name].getPosition().y &&
 			point.x <= circles[name].getPosition().x + ((circles[name].getRadius() * 2) * circles[name].getScale().x) &&
 			point.y <= circles[name].getPosition().y + ((circles[name].getRadius() * 2) * circles[name].getScale().y))
-        {
-            return true;
-        }
-        return false;
+		{
+			return true;
+		}
+		return false;
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		if (animations[name].positions.rotation >= 0 && animations[name].positions.rotation < 90)
-        {
+		{
 			if (point.y >= vertexArray[animations[name].positions.firstPosition].position.y &&
 				point.x <= vertexArray[animations[name].positions.firstPosition + 1].position.x &&
 				point.y <= vertexArray[animations[name].positions.firstPosition + 2].position.y &&
 				point.x >= vertexArray[animations[name].positions.firstPosition + 3].position.x)
-            {
-                return true;
-            }
-        }
-        else if (animations[name].positions.rotation >= 90 && animations[name].positions.rotation < 180)
-        {
+			{
+				return true;
+			}
+		}
+		else if (animations[name].positions.rotation >= 90 && animations[name].positions.rotation < 180)
+		{
 			if (point.x <= vertexArray[animations[name].positions.firstPosition].position.x &&
 				point.y <= vertexArray[animations[name].positions.firstPosition + 1].position.y &&
 				point.x >= vertexArray[animations[name].positions.firstPosition + 2].position.x &&
 				point.y >= vertexArray[animations[name].positions.firstPosition + 3].position.y)
-            {
-                return true;
-            }
-        }
-        else if (animations[name].positions.rotation >= 180 && animations[name].positions.rotation < 270)
-        {
+			{
+				return true;
+			}
+		}
+		else if (animations[name].positions.rotation >= 180 && animations[name].positions.rotation < 270)
+		{
 			if (point.y <= vertexArray[animations[name].positions.firstPosition].position.y &&
 				point.x >= vertexArray[animations[name].positions.firstPosition + 1].position.x &&
 				point.y >= vertexArray[animations[name].positions.firstPosition + 2].position.y &&
 				point.x <= vertexArray[animations[name].positions.firstPosition + 3].position.x)
-            {
-                return true;
-            }
-        }
-        else if (animations[name].positions.rotation >= 270)
-        {
+			{
+				return true;
+			}
+		}
+		else if (animations[name].positions.rotation >= 270)
+		{
 			if (point.x >= vertexArray[animations[name].positions.firstPosition].position.x &&
 				point.y >= vertexArray[animations[name].positions.firstPosition + 1].position.y &&
 				point.x <= vertexArray[animations[name].positions.firstPosition + 2].position.x &&
 				point.y <= vertexArray[animations[name].positions.firstPosition + 3].position.y)
-            {
-                return true;
-            }
-        }
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		if (entitys[name].rotation >= 0 && entitys[name].rotation < 90)
-        {
+		{
 			if (point.y >= vertexArray[entitys[name].firstPosition].position.y &&
 				point.x <= vertexArray[entitys[name].firstPosition + 1].position.x &&
 				point.y <= vertexArray[entitys[name].firstPosition + 2].position.y &&
 				point.x >= vertexArray[entitys[name].firstPosition + 3].position.x)
-            {
-                return true;
-            }
-        }
-        else if (entitys[name].rotation >= 90 && entitys[name].rotation < 180)
-        {
+			{
+				return true;
+			}
+		}
+		else if (entitys[name].rotation >= 90 && entitys[name].rotation < 180)
+		{
 			if (point.x <= vertexArray[entitys[name].firstPosition].position.x &&
 				point.y <= vertexArray[entitys[name].firstPosition + 1].position.y &&
 				point.x >= vertexArray[entitys[name].firstPosition + 2].position.x &&
 				point.y >= vertexArray[entitys[name].firstPosition + 3].position.y)
-            {
-                return true;
-            }
-        }
-        else if (entitys[name].rotation >= 180 && entitys[name].rotation < 270)
-        {
+			{
+				return true;
+			}
+		}
+		else if (entitys[name].rotation >= 180 && entitys[name].rotation < 270)
+		{
 			if (point.y <= vertexArray[entitys[name].firstPosition].position.y &&
 				point.x >= vertexArray[entitys[name].firstPosition + 1].position.x &&
 				point.y >= vertexArray[entitys[name].firstPosition + 2].position.y &&
 				point.x <= vertexArray[entitys[name].firstPosition + 3].position.x)
-            {
-                return true;
-            }
-        }
-        else if (entitys[name].rotation >= 270)
-        {
+			{
+				return true;
+			}
+		}
+		else if (entitys[name].rotation >= 270)
+		{
 			if (point.x >= vertexArray[entitys[name].firstPosition].position.x &&
 				point.y >= vertexArray[entitys[name].firstPosition + 1].position.y &&
 				point.x <= vertexArray[entitys[name].firstPosition + 2].position.x &&
 				point.y <= vertexArray[entitys[name].firstPosition + 3].position.y)
-            {
-                return true;
-            }
-        }
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	return false;
@@ -1851,10 +1851,10 @@ bool Window::isOverlapping(std::string const& entity1, std::string const& entity
 {
 	//circle
 	circleIterator = circles.find(entity1);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		entityIterator = entitys.find(entity2);
-		if(entityIterator != entitys.end())
+		if (entityIterator != entitys.end())
 		{
 			//circle in a box
 			if (isWithin(entity2, circles[entity1].getPosition()))
@@ -1882,25 +1882,25 @@ bool Window::isOverlapping(std::string const& entity1, std::string const& entity
 			}
 
 			//box in a circle
-            if (isWithin(entity1, entitys[entity2].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[3].position))
-            {
-                return true;
-            }
+			if (isWithin(entity1, entitys[entity2].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[3].position))
+			{
+				return true;
+			}
 		}
 		circleIterator = circles.find(entity2);
-		if(circleIterator != circles.end())
+		if (circleIterator != circles.end())
 		{
 			//circle 1 in circle 2
 			if (isWithin(entity2, circles[entity1].getPosition()))
@@ -1953,145 +1953,145 @@ bool Window::isOverlapping(std::string const& entity1, std::string const& entity
 			}
 		}
 		animationIterator = animations.find(entity2);
-		if(animationIterator != animations.end())
+		if (animationIterator != animations.end())
 		{
-		//circle in an animation
+			//circle in an animation
 			if (isWithin(entity2, circles[entity1].getPosition()))
-            {
-                return true;
-            }
-            tempVector = circles[entity1].getPosition();
+			{
+				return true;
+			}
+			tempVector = circles[entity1].getPosition();
 			tempVector.x = tempVector.x + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().x);
-            if (isWithin(entity2, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity1].getPosition();
+			if (isWithin(entity2, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity1].getPosition();
 			tempVector.y = tempVector.y + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().y);
-            if (isWithin(entity2, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity1].getPosition();
-            tempVector.x = tempVector.x + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().x);
-            tempVector.y = tempVector.y + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().y);
-            if (isWithin(entity2, tempVector))
-            {
-                return true;
-            }
+			if (isWithin(entity2, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity1].getPosition();
+			tempVector.x = tempVector.x + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().x);
+			tempVector.y = tempVector.y + ((circles[entity1].getRadius() * 2) * circles[entity1].getScale().y);
+			if (isWithin(entity2, tempVector))
+			{
+				return true;
+			}
 
-            //animation in a circle
-            if (isWithin(entity1, animations[entity2].positions.vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[3].position))
-            {
-                return true;
-            }
-        }
+			//animation in a circle
+			if (isWithin(entity1, animations[entity2].positions.vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[3].position))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	//animation
 	animationIterator = animations.find(entity1);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		entityIterator = entitys.find(entity2);
-		if(entityIterator != entitys.end())
+		if (entityIterator != entitys.end())
 		{
-			
-		    //animation in box
-            if (isWithin(entity1, entitys[entity2].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[3].position))
-            {
-                return true;
-            }
 
-            //box in animation
+			//animation in box
+			if (isWithin(entity1, entitys[entity2].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[3].position))
+			{
+				return true;
+			}
+
+			//box in animation
 			if (isWithin(entity2, animations[entity1].positions.vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[3].position))
-            {
-                return true;
-            }
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[3].position))
+			{
+				return true;
+			}
 		}
 		circleIterator = circles.find(entity2);
-		if(circleIterator != circles.end())
+		if (circleIterator != circles.end())
 		{
 			//circle in a animation
 			if (isWithin(entity1, circles[entity2].getPosition()))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
 			tempVector.x = tempVector.x + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().x);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
-            tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
-            tempVector.x = tempVector.x + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().x);
-            tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
+			tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
+			tempVector.x = tempVector.x + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().x);
+			tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
 
-            //animation in a circle
-            if (isWithin(entity2, animations[entity1].positions.vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, animations[entity1].positions.vertex[3].position))
-            {
-                return true;
-            }
+			//animation in a circle
+			if (isWithin(entity2, animations[entity1].positions.vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, animations[entity1].positions.vertex[3].position))
+			{
+				return true;
+			}
 		}
 		animationIterator = animations.find(entity2);
-		if(animationIterator != animations.end())
+		if (animationIterator != animations.end())
 		{
 			//animation in animation
 			if (isWithin(entity1, animations[entity2].positions.vertex[0].position))
@@ -2133,131 +2133,131 @@ bool Window::isOverlapping(std::string const& entity1, std::string const& entity
 	}
 	//quad
 	entityIterator = entitys.find(entity1);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		entityIterator = entitys.find(entity2);
-		if(entityIterator != entitys.end())
+		if (entityIterator != entitys.end())
 		{
-		    //box 1 in box 2
-            if (isWithin(entity1, entitys[entity2].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, entitys[entity2].vertex[3].position))
-            {
-                return true;
-            }
+			//box 1 in box 2
+			if (isWithin(entity1, entitys[entity2].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, entitys[entity2].vertex[3].position))
+			{
+				return true;
+			}
 
-            //box 2 in box 1
-            if (isWithin(entity2, entitys[entity1].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[3].position))
-            {
-                return true;
-            }
+			//box 2 in box 1
+			if (isWithin(entity2, entitys[entity1].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[3].position))
+			{
+				return true;
+			}
 		}
 		circleIterator = circles.find(entity2);
-		if(circleIterator != circles.end())
+		if (circleIterator != circles.end())
 		{
 			//circle in a box
 			if (isWithin(entity1, circles[entity2].getPosition()))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
 			tempVector.x = tempVector.x + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().x);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
 			tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
-            tempVector = circles[entity2].getPosition();
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
+			tempVector = circles[entity2].getPosition();
 			tempVector.x = tempVector.x + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().x);
 			tempVector.y = tempVector.y + ((circles[entity2].getRadius() * 2) * circles[entity2].getScale().y);
-            if (isWithin(entity1, tempVector))
-            {
-                return true;
-            }
+			if (isWithin(entity1, tempVector))
+			{
+				return true;
+			}
 
-            //box in a circle
-            if (isWithin(entity2, entitys[entity1].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[3].position))
-            {
-                return true;
-            }
+			//box in a circle
+			if (isWithin(entity2, entitys[entity1].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[3].position))
+			{
+				return true;
+			}
 		}
 		animationIterator = animations.find(entity2);
-		if(animationIterator != animations.end())
+		if (animationIterator != animations.end())
 		{
 			//box in animation
-            if (isWithin(entity1, animations[entity2].positions.vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity1, animations[entity2].positions.vertex[3].position))
-            {
-                return true;
-            }
+			if (isWithin(entity1, animations[entity2].positions.vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity1, animations[entity2].positions.vertex[3].position))
+			{
+				return true;
+			}
 
-            //animation in box
-            if (isWithin(entity2, entitys[entity1].vertex[0].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[1].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[2].position))
-            {
-                return true;
-            }
-            if (isWithin(entity2, entitys[entity1].vertex[3].position))
-            {
-                return true;
-            }
+			//animation in box
+			if (isWithin(entity2, entitys[entity1].vertex[0].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[1].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[2].position))
+			{
+				return true;
+			}
+			if (isWithin(entity2, entitys[entity1].vertex[3].position))
+			{
+				return true;
+			}
 		}
 		return false;
 	}
@@ -2269,10 +2269,10 @@ bool Window::isWithinArea(std::string const& name, sf::Vector2f const& point, in
 {
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
-		if(animations[name].positions.vertex[0].position.x >= point.x && animations[name].positions.vertex[0].position.y >= point.y &&
-		   animations[name].positions.vertex[0].position.x < width && animations[name].positions.vertex[0].position.y < height)
+		if (animations[name].positions.vertex[0].position.x >= point.x && animations[name].positions.vertex[0].position.y >= point.y &&
+			animations[name].positions.vertex[0].position.x < width && animations[name].positions.vertex[0].position.y < height)
 		{
 			return true;
 		}
@@ -2280,10 +2280,10 @@ bool Window::isWithinArea(std::string const& name, sf::Vector2f const& point, in
 	}
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
-		if(entitys[name].vertex[0].position.x >= point.x && entitys[name].vertex[0].position.y >= point.y &&
-		   entitys[name].vertex[0].position.x < width && entitys[name].vertex[0].position.y < height)
+		if (entitys[name].vertex[0].position.x >= point.x && entitys[name].vertex[0].position.y >= point.y &&
+			entitys[name].vertex[0].position.x < width && entitys[name].vertex[0].position.y < height)
 		{
 			return true;
 		}
@@ -2292,10 +2292,10 @@ bool Window::isWithinArea(std::string const& name, sf::Vector2f const& point, in
 	return false;
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
-		if(circles[name].getPosition().x >= point.x && circles[name].getPosition().y >= point.y &&
-		   circles[name].getPosition().x < width && circles[name].getPosition().y < height)
+		if (circles[name].getPosition().x >= point.x && circles[name].getPosition().y >= point.y &&
+			circles[name].getPosition().x < width && circles[name].getPosition().y < height)
 		{
 			return true;
 		}
@@ -2303,10 +2303,10 @@ bool Window::isWithinArea(std::string const& name, sf::Vector2f const& point, in
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
-		if(text[name].getPosition().x >= point.x && text[name].getPosition().y >= point.y &&
-		   text[name].getPosition().x < width && text[name].getPosition().y < height)
+		if (text[name].getPosition().x >= point.x && text[name].getPosition().y >= point.y &&
+			text[name].getPosition().x < width && text[name].getPosition().y < height)
 		{
 			return true;
 		}
@@ -2319,10 +2319,10 @@ bool Window::isWithinWindow(std::string const& name)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
-		if(entitys[name].vertex[0].position.x >= 0 && entitys[name].vertex[0].position.y >= 0 &&
-		   entitys[name].vertex[0].position.x < resolutionX && entitys[name].vertex[0].position.y < resolutionY)
+		if (entitys[name].vertex[0].position.x >= 0 && entitys[name].vertex[0].position.y >= 0 &&
+			entitys[name].vertex[0].position.x < resolutionX && entitys[name].vertex[0].position.y < resolutionY)
 		{
 			return true;
 		}
@@ -2331,10 +2331,10 @@ bool Window::isWithinWindow(std::string const& name)
 	return false;
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
-		if(animations[name].positions.vertex[0].position.x >= 0 && animations[name].positions.vertex[0].position.y >= 0 &&
-		   animations[name].positions.vertex[0].position.x < resolutionX && animations[name].positions.vertex[0].position.y < resolutionY)
+		if (animations[name].positions.vertex[0].position.x >= 0 && animations[name].positions.vertex[0].position.y >= 0 &&
+			animations[name].positions.vertex[0].position.x < resolutionX && animations[name].positions.vertex[0].position.y < resolutionY)
 		{
 			return true;
 		}
@@ -2342,10 +2342,10 @@ bool Window::isWithinWindow(std::string const& name)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
-		if(circles[name].getPosition().x >= 0 && circles[name].getPosition().y >= 0 &&
-		   circles[name].getPosition().x < resolutionX && circles[name].getPosition().y < resolutionY)
+		if (circles[name].getPosition().x >= 0 && circles[name].getPosition().y >= 0 &&
+			circles[name].getPosition().x < resolutionX && circles[name].getPosition().y < resolutionY)
 		{
 			return true;
 		}
@@ -2353,10 +2353,10 @@ bool Window::isWithinWindow(std::string const& name)
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
-		if(text[name].getPosition().x >= 0 && text[name].getPosition().y >= 0 &&
-		   text[name].getPosition().x < resolutionX && text[name].getPosition().y < resolutionY)
+		if (text[name].getPosition().x >= 0 && text[name].getPosition().y >= 0 &&
+			text[name].getPosition().x < resolutionX && text[name].getPosition().y < resolutionY)
 		{
 			return true;
 		}
@@ -2365,14 +2365,14 @@ bool Window::isWithinWindow(std::string const& name)
 }
 
 //returns if a given entity is within the window
-bool Window::isWithinWindow(std::string const& name,  int width, int height)
+bool Window::isWithinWindow(std::string const& name, int width, int height)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
-		if(entitys[name].vertex[0].position.x >= 0 && entitys[name].vertex[0].position.y >= 0 &&
-		   entitys[name].vertex[0].position.x < width && entitys[name].vertex[0].position.y < height)
+		if (entitys[name].vertex[0].position.x >= 0 && entitys[name].vertex[0].position.y >= 0 &&
+			entitys[name].vertex[0].position.x < width && entitys[name].vertex[0].position.y < height)
 		{
 			return true;
 		}
@@ -2381,10 +2381,10 @@ bool Window::isWithinWindow(std::string const& name,  int width, int height)
 	return false;
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
-		if(animations[name].positions.vertex[0].position.x >= 0 && animations[name].positions.vertex[0].position.y >= 0 &&
-		   animations[name].positions.vertex[0].position.x < width && animations[name].positions.vertex[0].position.y < height)
+		if (animations[name].positions.vertex[0].position.x >= 0 && animations[name].positions.vertex[0].position.y >= 0 &&
+			animations[name].positions.vertex[0].position.x < width && animations[name].positions.vertex[0].position.y < height)
 		{
 			return true;
 		}
@@ -2392,10 +2392,10 @@ bool Window::isWithinWindow(std::string const& name,  int width, int height)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
-		if(circles[name].getPosition().x >= 0 && circles[name].getPosition().y >= 0 &&
-		   circles[name].getPosition().x < width && circles[name].getPosition().y < height)
+		if (circles[name].getPosition().x >= 0 && circles[name].getPosition().y >= 0 &&
+			circles[name].getPosition().x < width && circles[name].getPosition().y < height)
 		{
 			return true;
 		}
@@ -2403,10 +2403,10 @@ bool Window::isWithinWindow(std::string const& name,  int width, int height)
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
-		if(text[name].getPosition().x >= 0 && text[name].getPosition().y >= 0 &&
-		   text[name].getPosition().x < width && text[name].getPosition().y < height)
+		if (text[name].getPosition().x >= 0 && text[name].getPosition().y >= 0 &&
+			text[name].getPosition().x < width && text[name].getPosition().y < height)
 		{
 			return true;
 		}
@@ -2419,33 +2419,33 @@ std::string Window::batchIsWithin(std::string const& name, sf::Vector2f const& p
 {
 	tempStr.clear();
 	//quad
-	for(entityIterator = entitys.begin(); entityIterator != entitys.end(); ++entityIterator)
+	for (entityIterator = entitys.begin(); entityIterator != entitys.end(); ++entityIterator)
 	{
-		if(entityIterator->first.find(name) != std::string::npos)
+		if (entityIterator->first.find(name) != std::string::npos)
 		{
-			if(isWithin(entityIterator->first, point) == true)
+			if (isWithin(entityIterator->first, point) == true)
 			{
 				tempStr.append(entityIterator->first);
 			}
 		}
 	}
 	//animation
-	for(animationIterator = animations.begin(); animationIterator != animations.end(); ++animationIterator)
+	for (animationIterator = animations.begin(); animationIterator != animations.end(); ++animationIterator)
 	{
-		if(animationIterator->first.find(name) != std::string::npos)
+		if (animationIterator->first.find(name) != std::string::npos)
 		{
-			if(isWithin(animationIterator->first, point) == true)
+			if (isWithin(animationIterator->first, point) == true)
 			{
 				tempStr.append(animationIterator->first);
 			}
 		}
 	}
 	//circle
-	for(circleIterator = circles.begin(); circleIterator != circles.end(); ++circleIterator)
+	for (circleIterator = circles.begin(); circleIterator != circles.end(); ++circleIterator)
 	{
-		if(circleIterator->first.find(name) != std::string::npos)
+		if (circleIterator->first.find(name) != std::string::npos)
 		{
-			if(isWithin(circleIterator->first, point) == true)
+			if (isWithin(circleIterator->first, point) == true)
 			{
 				tempStr.append(circleIterator->first);
 			}
@@ -2460,33 +2460,33 @@ std::string Window::batchIsOverlapping(std::string const& entity, std::string co
 {
 	tempStr.clear();
 	//quad
-	for(std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
+	for (std::unordered_map<std::string, Quad>::iterator tempEntItr = entitys.begin(); tempEntItr != entitys.end(); ++tempEntItr)
 	{
-		if(tempEntItr->first.find(severalEntitys) != std::string::npos)
+		if (tempEntItr->first.find(severalEntitys) != std::string::npos)
 		{
-			if(isOverlapping(tempEntItr->first, entity) == true && tempEntItr->first != entity)
+			if (isOverlapping(tempEntItr->first, entity) == true && tempEntItr->first != entity)
 			{
 				tempStr.append(tempEntItr->first);
 			}
 		}
 	}
 	//animation
-	for(std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
+	for (std::unordered_map<std::string, Animation>::iterator tempAniItr = animations.begin(); tempAniItr != animations.end(); ++tempAniItr)
 	{
-		if(tempAniItr->first.find(severalEntitys) != std::string::npos)
+		if (tempAniItr->first.find(severalEntitys) != std::string::npos)
 		{
-			if(Window::isOverlapping(tempAniItr->first, entity) == true && tempAniItr->first != entity)
+			if (Window::isOverlapping(tempAniItr->first, entity) == true && tempAniItr->first != entity)
 			{
 				tempStr.append(tempAniItr->first);
 			}
 		}
 	}
 	//circle
-	for(std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
+	for (std::unordered_map<std::string, sf::CircleShape>::iterator tempCirItr = circles.begin(); tempCirItr != circles.end(); ++tempCirItr)
 	{
-		if(tempCirItr->first.find(severalEntitys) != std::string::npos)
+		if (tempCirItr->first.find(severalEntitys) != std::string::npos)
 		{
-			if(Window::isOverlapping(tempCirItr->first, entity) == true && tempCirItr->first != entity)
+			if (Window::isOverlapping(tempCirItr->first, entity) == true && tempCirItr->first != entity)
 			{
 				tempStr.append(tempCirItr->first);
 			}
@@ -2498,69 +2498,69 @@ std::string Window::batchIsOverlapping(std::string const& entity, std::string co
 //plays an animation
 void Window::playAnimation(std::string const& name)
 {
-	if(animations[name].paused == false)
+	if (animations[name].paused == false)
 	{
-		if(animations[name].animationTimer.getElapsedTimeMilliseconds() >= animations[name].speed)
+		if (animations[name].animationTimer.getElapsedTimeMilliseconds() >= animations[name].speed)
 		{
 			if (animations[name].currentFrame + 1 != animations[name].frames.size())
-            {
-                animations[name].currentFrame += 1;
-                //point 1 dictionary
+			{
+				animations[name].currentFrame += 1;
+				//point 1 dictionary
 				animations[name].positions.vertex[0].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 				animations[name].positions.vertex[0].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-                //point 2 dictionary
+				//point 2 dictionary
 				animations[name].positions.vertex[1].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
 				animations[name].positions.vertex[1].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-                //point 3 dictionary
+				//point 3 dictionary
 				animations[name].positions.vertex[2].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
-                animations[name].positions.vertex[2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-                //point 4 dictionary
+				animations[name].positions.vertex[2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
+				//point 4 dictionary
 				animations[name].positions.vertex[3].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 				animations[name].positions.vertex[3].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-				
-                //point 1 vertex
+
+				//point 1 vertex
 				vertexArray[animations[name].positions.firstPosition].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
-                vertexArray[animations[name].positions.firstPosition].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-                //point 2 vertex
-                vertexArray[animations[name].positions.firstPosition + 1].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
-                vertexArray[animations[name].positions.firstPosition + 1].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-                //point 3 vertex
+				vertexArray[animations[name].positions.firstPosition].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
+				//point 2 vertex
+				vertexArray[animations[name].positions.firstPosition + 1].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
+				vertexArray[animations[name].positions.firstPosition + 1].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
+				//point 3 vertex
 				vertexArray[animations[name].positions.firstPosition + 2].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
-                vertexArray[animations[name].positions.firstPosition + 2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-                //point 4 vertex
-                vertexArray[animations[name].positions.firstPosition + 3].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
-                vertexArray[animations[name].positions.firstPosition + 3].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-				
-            }
+				vertexArray[animations[name].positions.firstPosition + 2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
+				//point 4 vertex
+				vertexArray[animations[name].positions.firstPosition + 3].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
+				vertexArray[animations[name].positions.firstPosition + 3].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
+
+			}
 			else
-            {
-                animations[name].currentFrame = 0;
-                //point 1 dictionary
+			{
+				animations[name].currentFrame = 0;
+				//point 1 dictionary
 				animations[name].positions.vertex[0].texCoords.x = spriteMaps[animations[name].frames[0]].left;
 				animations[name].positions.vertex[0].texCoords.y = spriteMaps[animations[name].frames[0]].top;
-                //point 2 dictionary
+				//point 2 dictionary
 				animations[name].positions.vertex[1].texCoords.x = spriteMaps[animations[name].frames[0]].left + spriteMaps[animations[name].frames[0]].width;
 				animations[name].positions.vertex[1].texCoords.y = spriteMaps[animations[name].frames[0]].top;
-                //point 3 dictionary
+				//point 3 dictionary
 				animations[name].positions.vertex[2].texCoords.x = spriteMaps[animations[name].frames[0]].left + spriteMaps[animations[name].frames[0]].width;
 				animations[name].positions.vertex[2].texCoords.y = spriteMaps[animations[name].frames[0]].top + spriteMaps[animations[name].frames[0]].height;
-                //point 4 dictionary
+				//point 4 dictionary
 				animations[name].positions.vertex[3].texCoords.x = spriteMaps[animations[name].frames[0]].left;
 				animations[name].positions.vertex[3].texCoords.y = spriteMaps[animations[name].frames[0]].top + spriteMaps[animations[name].frames[0]].height;
-				
-                //point 1 vertex
+
+				//point 1 vertex
 				vertexArray[animations[name].positions.firstPosition].texCoords.x = spriteMaps[animations[name].frames[0]].left;
 				vertexArray[animations[name].positions.firstPosition].texCoords.y = spriteMaps[animations[name].frames[0]].top;
-                //point 2 vertex
+				//point 2 vertex
 				vertexArray[animations[name].positions.firstPosition + 1].texCoords.x = spriteMaps[animations[name].frames[0]].left + spriteMaps[animations[name].frames[0]].width;
 				vertexArray[animations[name].positions.firstPosition + 1].texCoords.y = spriteMaps[animations[name].frames[0]].top;
-                //point 3 vertex
+				//point 3 vertex
 				vertexArray[animations[name].positions.firstPosition + 2].texCoords.x = spriteMaps[animations[name].frames[0]].left + spriteMaps[animations[name].frames[0]].width;
 				vertexArray[animations[name].positions.firstPosition + 2].texCoords.y = spriteMaps[animations[name].frames[0]].top + spriteMaps[animations[name].frames[0]].height;
-                //point 4 vertex
+				//point 4 vertex
 				vertexArray[animations[name].positions.firstPosition + 3].texCoords.x = spriteMaps[animations[name].frames[0]].left;
 				vertexArray[animations[name].positions.firstPosition + 3].texCoords.y = spriteMaps[animations[name].frames[0]].top + spriteMaps[animations[name].frames[0]].height;
-            }
+			}
 			animations[name].animationTimer.restartClock();
 		}
 	}
@@ -2570,7 +2570,7 @@ void Window::playAnimation(std::string const& name)
 void Window::pauseAnimation(std::string const& name)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].paused = true;
 	}
@@ -2580,7 +2580,7 @@ void Window::pauseAnimation(std::string const& name)
 void Window::resumeAnimation(std::string const& name)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].paused = false;
 	}
@@ -2590,32 +2590,32 @@ void Window::resumeAnimation(std::string const& name)
 void Window::goToFrame(std::string const& name, int frameIndex)
 {
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		animations[name].currentFrame = frameIndex;
-        //point 1 dictionary
+		//point 1 dictionary
 		animations[name].positions.vertex[0].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 		animations[name].positions.vertex[0].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-        //point 2 dictionary
+		//point 2 dictionary
 		animations[name].positions.vertex[1].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
 		animations[name].positions.vertex[1].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-        //point 3 dictionary
+		//point 3 dictionary
 		animations[name].positions.vertex[2].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
 		animations[name].positions.vertex[2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-        //point 4 dictionary
+		//point 4 dictionary
 		animations[name].positions.vertex[3].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 		animations[name].positions.vertex[3].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
 
-        //point 1 vertex
+		//point 1 vertex
 		vertexArray[animations[name].positions.firstPosition].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 		vertexArray[animations[name].positions.firstPosition].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-        //point 2 vertex
+		//point 2 vertex
 		vertexArray[animations[name].positions.firstPosition + 1].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
 		vertexArray[animations[name].positions.firstPosition + 1].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top;
-        //point 3 vertex
+		//point 3 vertex
 		vertexArray[animations[name].positions.firstPosition + 2].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left + spriteMaps[animations[name].frames[animations[name].currentFrame]].width;
 		vertexArray[animations[name].positions.firstPosition + 2].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
-        //point 4 vertex
+		//point 4 vertex
 		vertexArray[animations[name].positions.firstPosition + 3].texCoords.x = spriteMaps[animations[name].frames[animations[name].currentFrame]].left;
 		vertexArray[animations[name].positions.firstPosition + 3].texCoords.y = spriteMaps[animations[name].frames[animations[name].currentFrame]].top + spriteMaps[animations[name].frames[animations[name].currentFrame]].height;
 	}
@@ -2625,11 +2625,11 @@ void Window::goToFrame(std::string const& name, int frameIndex)
 bool Window::boundingBoxPoint(sf::Vector2f const& point, sf::Vector2f const& boxOrigin, int width, int height)
 {
 	if (point.x >= boxOrigin.x && point.x <= boxOrigin.x + width &&
-    point.y >= boxOrigin.y && point.y <= boxOrigin.y + height)
-    {
-        return true;
-    }
-    return false;
+		point.y >= boxOrigin.y && point.y <= boxOrigin.y + height)
+	{
+		return true;
+	}
+	return false;
 }
 
 //finds if a point is within a bounding circle
@@ -2638,67 +2638,67 @@ bool Window::boudingCirclePoint(sf::Vector2f point, sf::Vector2f const& boxOrigi
 	point.x = point.x - boxOrigin.x;
 	point.y = point.y - boxOrigin.y;
 	if ((std::sqrt((point.x * point.x) + (point.y * point.y))) <= radius)
-    {
-        return true;
-    }
-    return false;
+	{
+		return true;
+	}
+	return false;
 }
 
 //finds if two bounding boxes are overlapping
 bool Window::boundingBoxOverlap(sf::Vector2f boxOrigin1, int width1, int height1, sf::Vector2f boxOrigin2, int width2, int height2)
 {
 	if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
-    {
-        return true;
-    }
-    boxOrigin1.x += width1;
-    if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
-    {
-        return true;
-    }
-    boxOrigin1.y += height1;
-    if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
-    {
-        return true;
-    }
-    boxOrigin1.x -= width1;
-    if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
-    {
-        return true;
-    }
-    boxOrigin1.y -= height1;
-    if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
-    {
-        return true;
-    }
-    boxOrigin2.x += width2;
-    if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
-    {
-        return true;
-    }
-    boxOrigin2.y += height2;
-    if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
-    {
-        return true;
-    }
-    boxOrigin2.x -= width2;
-    if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
-    {
-        return true;
-    }
-    return false;
+	{
+		return true;
+	}
+	boxOrigin1.x += width1;
+	if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
+	{
+		return true;
+	}
+	boxOrigin1.y += height1;
+	if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
+	{
+		return true;
+	}
+	boxOrigin1.x -= width1;
+	if (boundingBoxPoint(boxOrigin1, boxOrigin2, width2, height2))
+	{
+		return true;
+	}
+	boxOrigin1.y -= height1;
+	if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
+	{
+		return true;
+	}
+	boxOrigin2.x += width2;
+	if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
+	{
+		return true;
+	}
+	boxOrigin2.y += height2;
+	if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
+	{
+		return true;
+	}
+	boxOrigin2.x -= width2;
+	if (boundingBoxPoint(boxOrigin2, boxOrigin1, width1, height1))
+	{
+		return true;
+	}
+	return false;
 }
 
 //finds if two bounding circles are overlapping
 bool Window::boundingCircleOverlap(sf::Vector2f const& circleOrigin1, int radius1, sf::Vector2f const& circleOrigin2, int radius2)
 {
 	tempVector.x = circleOrigin1.x - circleOrigin2.x;
-    tempVector.y = circleOrigin1.y - circleOrigin2.y;
-    if ((std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y))) < (radius1 + radius2))
-    {
-        return true;
-    }
-    return false;
+	tempVector.y = circleOrigin1.y - circleOrigin2.y;
+	if ((std::sqrt((tempVector.x * tempVector.x) + (tempVector.y * tempVector.y))) < (radius1 + radius2))
+	{
+		return true;
+	}
+	return false;
 }
 
 //makes an entity visible
@@ -2706,7 +2706,7 @@ void Window::makeVisible(std::string const& name)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition].color = entitys[name].color[0];
 		vertexArray[entitys[name].firstPosition + 1].color = entitys[name].color[1];
@@ -2716,7 +2716,7 @@ void Window::makeVisible(std::string const& name)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		vertexArray[animations[name].positions.firstPosition].color = animations[name].positions.color[0];
 		vertexArray[animations[name].positions.firstPosition + 1].color = animations[name].positions.color[1];
@@ -2726,14 +2726,14 @@ void Window::makeVisible(std::string const& name)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setFillColor(colorMap[name]);
 		return;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setColor(colorMap[name]);
 		return;
@@ -2745,7 +2745,7 @@ void Window::makeInvisible(std::string const& name)
 {
 	//quad
 	entityIterator = entitys.find(name);
-	if(entityIterator != entitys.end())
+	if (entityIterator != entitys.end())
 	{
 		vertexArray[entitys[name].firstPosition].color = sf::Color::Transparent;
 		vertexArray[entitys[name].firstPosition + 1].color = sf::Color::Transparent;
@@ -2755,7 +2755,7 @@ void Window::makeInvisible(std::string const& name)
 	}
 	//animation
 	animationIterator = animations.find(name);
-	if(animationIterator != animations.end())
+	if (animationIterator != animations.end())
 	{
 		vertexArray[animations[name].positions.firstPosition].color = sf::Color::Transparent;
 		vertexArray[animations[name].positions.firstPosition + 1].color = sf::Color::Transparent;
@@ -2765,14 +2765,14 @@ void Window::makeInvisible(std::string const& name)
 	}
 	//circle
 	circleIterator = circles.find(name);
-	if(circleIterator != circles.end())
+	if (circleIterator != circles.end())
 	{
 		circles[name].setFillColor(sf::Color::Transparent);
 		return;
 	}
 	//text
 	textIterator = text.find(name);
-	if(textIterator != text.end())
+	if (textIterator != text.end())
 	{
 		text[name].setColor(sf::Color::Transparent);
 		return;
@@ -2800,25 +2800,25 @@ void Window::zoomView(std::string name, float zoom)
 //draws everything onto the screen
 void Window::drawAll()
 {
-	if(gameTimer.getElapsedTimeMicroseconds() >= updateSpeed || FPSLimit==false)
+	if (gameTimer.getElapsedTimeMicroseconds() >= updateSpeed || FPSLimit == false)
 	{
 		//update animations
-		for(animationIterator = animations.begin(); animationIterator != animations.end(); ++animationIterator)
+		for (animationIterator = animations.begin(); animationIterator != animations.end(); ++animationIterator)
 		{
 			playAnimation(animationIterator->first);
 		}
 
 		gameWindow.clear(background);
-		
+
 		//draw quads
 		gameWindow.draw(vertexArray, vertexCount, sf::PrimitiveType::Quads, state);
 		//draw text
-		for(textIterator = text.begin(); textIterator != text.end(); ++textIterator)
+		for (textIterator = text.begin(); textIterator != text.end(); ++textIterator)
 		{
 			gameWindow.draw(text[textIterator->first]);
 		}
 		//draw circles
-		for(circleIterator = circles.begin(); circleIterator != circles.end(); ++circleIterator)
+		for (circleIterator = circles.begin(); circleIterator != circles.end(); ++circleIterator)
 		{
 			gameWindow.draw(circles[circleIterator->first]);
 		}

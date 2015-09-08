@@ -9,4 +9,4 @@ Keyboard/Mouse input,
 Sample/Music playback,
 Independent logic and graphics loops.
 
-Requires install of ether Visual Studio 2012 C++ redistributable, or a copy of Visual Studio 2012.
+Requires install of ether Visual Studio 2013 C++ redistributable, or a copy of Visual Studio 2013.
