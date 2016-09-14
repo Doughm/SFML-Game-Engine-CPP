@@ -2,6 +2,7 @@
 //Programer Douglas Harvey-Marose
 //
 // - Version Changes 1.2
+//   made LoadINI static
 //	 added text centering functionality 
 //	 added a function to end the program
 //	 added fullscreen toggle
