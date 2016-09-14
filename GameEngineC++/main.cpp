@@ -1,6 +1,11 @@
 //SFML C++ 2D Game Engine 1.0
 //Programer Douglas Harvey-Marose
 //
+// - Version Changes 1.2
+//	 added text centering functionality 
+//	 added a function to end the program
+//	 added fullscreen toggle
+//	 added function to find if a entity is invisible
 //
 // - Version Changes 1.1
 //   changed the audio on-off to set rather than toggle
@@ -23,7 +28,7 @@
 
 int main()
 {
-	Window* window = new Window();
+	Window* window = new Window("SFML GameEngine");
 	AssetLoader assetLoader(window);
 	GameTimer gameTimer;
 

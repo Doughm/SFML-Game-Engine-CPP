@@ -13,7 +13,7 @@
 class Window
 {
 public:
-	Window();
+	Window(std::string const&);
 	bool isOpen();
 	void drawAll();
 	std::string inputKeyboard();
@@ -30,17 +30,17 @@ public:
 	void addView(std::string const&, int, int, sf::Vector2f const&);
 	void addSpriteSheet(std::string const&);
 	void addSpriteMap(std::string const&, sf::Vector2f const&, int, int);
-	void addQuad(std::string const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&,sf::Vertex const&);
+	void addQuad(std::string const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&);
 	void addSprite(std::string const&, std::string const&, sf::Vector2f const&);
 	void addRectangle(std::string const&, sf::Vector2f const&, int, int, sf::Color const&);
-	void addRectangle(std::string const&, sf::Vector2f const&, int, int, sf::Color const&, sf::Color const&,sf::Color const&,sf::Color const&);
+	void addRectangle(std::string const&, sf::Vector2f const&, int, int, sf::Color const&, sf::Color const&, sf::Color const&, sf::Color const&);
 	void addText(std::string const&, sf::Vector2f const&, sf::Color const&, int, std::string const&);
 	void addCircle(std::string const&, sf::Vector2f const&, sf::Color const&, int);
 	void addAnimation(std::string const&, std::vector<std::string> const&, sf::Vector2f const&, float);
-	void batchAddQuad(int, std::string const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&,sf::Vertex const&);
+	void batchAddQuad(int, std::string const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&, sf::Vertex const&);
 	void batchAddSprite(int, std::string const&, std::string const&, sf::Vector2f const&);
 	void batchAddRectangle(int, std::string const&, sf::Vector2f const&, int, int, sf::Color const&);
-	void batchAddRectangle(int, std::string const&, sf::Vector2f const&, int, int, sf::Color const&, sf::Color const&,sf::Color const&,sf::Color const&);
+	void batchAddRectangle(int, std::string const&, sf::Vector2f const&, int, int, sf::Color const&, sf::Color const&, sf::Color const&, sf::Color const&);
 	void batchAddText(int, std::string const&, sf::Vector2f const&, sf::Color const&, int, std::string const&);
 	void batchAddCircle(int, std::string const&, sf::Vector2f const&, sf::Color const&, int);
 	void batchAddAnimation(int, std::string const&, std::vector<std::string> const&, sf::Vector2f const&, float);
@@ -74,6 +74,10 @@ public:
 	void moveView(std::string, sf::Vector2f);
 	void rotateView(std::string, float);
 	void zoomView(std::string, float);
+	void centerText(std::string const&, int, int, int, int);
+	void centerTextHorizontal(std::string const&, int, int);
+	void centerTextVertical(std::string const&, int, int);
+	void quitProgram();
 
 	//sets and gets
 	void setBackgroundColor(sf::Color const&);
@@ -84,6 +88,7 @@ public:
 	void setCircleOutline(std::string const&, sf::Color const&, int);
 	void setText(std::string const&, std::string const&);
 	void setView(std::string const&);
+	void setFullscreen(bool);
 	sf::Vector2f getPointOfOrigin(std::string const&);
 	double getRotation(std::string const&);
 	std::string getText(std::string const&);
@@ -96,6 +101,8 @@ public:
 	int getCirclesCount();
 	int getTextCount();
 	int getAnimationCount();
+	bool isFullscreen();
+	bool isInvisible(std::string const&);
 	std::string getAllEntities();
 	sf::Vector2f getResolution();
 
@@ -109,6 +116,7 @@ private:
 	int fps;
 	double updateSpeed;
 	bool FPSLimit;
+	bool fullscreenWindow;
 	sf::Color background;
 	sf::Font font;
 	std::string mouseClick;
@@ -119,9 +127,9 @@ private:
 	double currentAngle;
 	double distance;
 	GameTimer gameTimer;
-	LoadINI loadINI;
 	sf::Vertex *vertexArray;
 	unsigned int vertexCount;
+	bool programEnd;
 	sf::RenderStates state;
 	std::unordered_map<std::string, sf::View> views;
 	std::unordered_map<std::string, Quad> entitys;

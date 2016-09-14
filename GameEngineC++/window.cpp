@@ -5,43 +5,59 @@
 #include "convert.h"
 #include <cmath>
 
-Window::Window() :PI(3.141592653589793)
+Window::Window(std::string const& program) :PI(3.141592653589793)
 {
-	programName = "Asteroids";
-	loadINI.setFile("engine.ini");
-	if (loadINI.fileExists("engine.ini"))
+	programName = program;
+	if (LoadINI::fileExists("engine.ini"))
 	{
-		if (loadINI.inFile("ResolutionWidth") == true)
+		if (LoadINI::inFile("engine.ini", "ResolutionWidth") == true)
 		{
-			resolutionX = Convert::stringToInt(loadINI.getValue("ResolutionWidth"));
+			resolutionX = Convert::stringToInt(LoadINI::getValue("engine.ini", "ResolutionWidth"));
 		}
 		else
 		{
 			resolutionX = 640;
 		}
-		if (loadINI.inFile("ResolutionHeight") == true)
+		if (LoadINI::inFile("engine.ini", "ResolutionHeight") == true)
 		{
-			resolutionY = Convert::stringToInt(loadINI.getValue("ResolutionHeight"));
+			resolutionY = Convert::stringToInt(LoadINI::getValue("engine.ini", "ResolutionHeight"));
 		}
 		else
 		{
 			resolutionY = 480;
 		}
-		if (loadINI.inFile("FPSCapped") == true)
+		if (LoadINI::inFile("engine.ini", "FPSCapped") == true)
 		{
-			FPSLimit = Convert::stringToBool(loadINI.getValue("FPSCapped"));
+			FPSLimit = Convert::stringToBool(LoadINI::getValue("engine.ini", "FPSCapped"));
 		}
 		else
 		{
 			FPSLimit = true;
 		}
-		if (loadINI.inFile("FPSLimit") == true)
+		if (LoadINI::inFile("engine.ini", "FPSLimit") == true)
 		{
-			fps = Convert::stringToInt(loadINI.getValue("FPSLimit"));
+			fps = Convert::stringToInt(LoadINI::getValue("engine.ini", "FPSLimit"));
 		}
 		else
 		{
 			fps = 30;
+		}
+		if (LoadINI::inFile("engine.ini", "Fullscreen") == true)
+		{
+			if (Convert::stringToBool(LoadINI::getValue("engine.ini", "Fullscreen")) == true)
+			{
+				fullscreenWindow = true;
+				gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Fullscreen);
+			}
+			else
+			{
+				fullscreenWindow = false;
+				gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Close);
+			}
+		}
+		else
+		{
+			gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Close);
 		}
 	}
 	else
@@ -50,12 +66,13 @@ Window::Window() :PI(3.141592653589793)
 		resolutionY = 480;
 		FPSLimit = true;
 		fps = 30;
+		fullscreenWindow = false;
+		gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Close);
 	}
 
 	keyboardDown.clear();
 	mouseClick.clear();
 	updateSpeed = 1000000 / (double)fps;
-	gameWindow.create(sf::VideoMode(resolutionX, resolutionY), programName, sf::Style::Close);
 	background = sf::Color::White;
 	state = state.Default;
 	vertexArray = new sf::Vertex[1];
@@ -2779,6 +2796,60 @@ void Window::makeInvisible(std::string const& name)
 	}
 }
 
+//returns if a entity is invisible or not
+bool Window::isInvisible(std::string const& name)
+{
+	//quad
+	entityIterator = entitys.find(name);
+	if (entityIterator != entitys.end())
+	{
+		if (vertexArray[entitys[name].firstPosition].color == sf::Color::Transparent &&
+			vertexArray[entitys[name].firstPosition + 1].color == sf::Color::Transparent &&
+			vertexArray[entitys[name].firstPosition + 2].color == sf::Color::Transparent &&
+			vertexArray[entitys[name].firstPosition + 3].color == sf::Color::Transparent)
+		{
+			return true;
+		}
+		return false;
+	}
+	//animation
+	animationIterator = animations.find(name);
+	if (animationIterator != animations.end())
+	{
+
+		if (vertexArray[animations[name].positions.firstPosition].color == sf::Color::Transparent &&
+			vertexArray[animations[name].positions.firstPosition + 1].color == sf::Color::Transparent &&
+			vertexArray[animations[name].positions.firstPosition + 2].color == sf::Color::Transparent &&
+			vertexArray[animations[name].positions.firstPosition + 3].color == sf::Color::Transparent)
+		{
+			return true;
+		}
+		return false;
+	}
+	//circle
+	circleIterator = circles.find(name);
+	if (circleIterator != circles.end())
+	{
+		if (circles[name].getFillColor() == sf::Color::Transparent)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	//text
+	textIterator = text.find(name);
+	if (textIterator != text.end())
+	{
+		if (text[name].getColor() == sf::Color::Transparent)
+		{
+			return true;
+		}
+		return false;
+	}
+	return false;
+}
+
 //moves a view
 void Window::moveView(std::string name, sf::Vector2f position)
 {
@@ -2795,6 +2866,89 @@ void Window::rotateView(std::string name, float rotation)
 void Window::zoomView(std::string name, float zoom)
 {
 	views[name].zoom(zoom);
+}
+
+//centers text both horizontally and vertically
+void Window::centerText(std::string const& name, int right, int left, int top, int bottom)
+{
+	textIterator = text.find(name);
+	if (textIterator != text.end())
+	{
+		//Horizontal
+		tempVector.x = (int)(left - right) / 2;
+		if (tempVector.x > 0)
+		{
+			tempVector.y = (int)text[name].getGlobalBounds().width / 2;
+			text[name].setPosition(right + (tempVector.x - tempVector.y), text[name].getPosition().y);
+		}
+		else
+		{
+			tempVector.x *= -1;
+			tempVector.y = (int)text[name].getGlobalBounds().width / 2;
+			text[name].setPosition(left + (tempVector.x - tempVector.y), text[name].getPosition().y);
+		}
+		//Vertical
+		tempVector.x = (int)(bottom - top) / 2;
+		if (tempVector.x > 0)
+		{
+			tempVector.y = (int)text[name].getGlobalBounds().height / 2;
+			text[name].setPosition(text[name].getPosition().x, top + (tempVector.x - tempVector.y - 4));
+		}
+		else
+		{
+			tempVector.x *= -1;
+			tempVector.y = (int)text[name].getGlobalBounds().height / 2;
+			text[name].setPosition(text[name].getPosition().x, bottom + (tempVector.x - tempVector.y - 4));
+		}
+	}
+}
+
+//centers text between two points horizontally
+void Window::centerTextHorizontal(std::string const& name, int right, int left)
+{
+	textIterator = text.find(name);
+	if (textIterator != text.end())
+	{
+		tempVector.x = (int)(left - right) / 2;
+		if (tempVector.x > 0)
+		{
+			tempVector.y = (int)text[name].getGlobalBounds().width / 2;
+			text[name].setPosition(right + (tempVector.x - tempVector.y), text[name].getPosition().y);
+		}
+		else
+		{
+			tempVector.x *= -1;
+			tempVector.y = (int)text[name].getGlobalBounds().width / 2;
+			text[name].setPosition(left + (tempVector.x - tempVector.y), text[name].getPosition().y);
+		}
+	}
+}
+
+//centers text between two points vertically
+void Window::centerTextVertical(std::string const& name, int top, int bottom)
+{
+	textIterator = text.find(name);
+	if (textIterator != text.end())
+	{
+		tempVector.x = (int)(bottom - top) / 2;
+		if (tempVector.x > 0)
+		{
+			tempVector.y = (int)text[name].getGlobalBounds().height / 2;
+			text[name].setPosition(text[name].getPosition().x, top + (tempVector.x - tempVector.y - 4));
+		}
+		else
+		{
+			tempVector.x *= -1;
+			tempVector.y = (int)text[name].getGlobalBounds().height / 2;
+			text[name].setPosition(text[name].getPosition().x, bottom + (tempVector.x - tempVector.y - 4));
+		}
+	}
+}
+
+//ends the program
+void Window::quitProgram()
+{
+	programEnd = true;
 }
 
 //draws everything onto the screen

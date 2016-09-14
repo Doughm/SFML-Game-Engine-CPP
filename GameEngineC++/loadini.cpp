@@ -1,52 +1,10 @@
 #include "loadini.h"
 
-LoadINI::LoadINI()
-{
-	fileName = "no file selected";
-}
-
-LoadINI::LoadINI(std::string const& file)
-{
-	setFile(file);
-}
-
-//sets a new file to access
-void LoadINI::setFile(std::string const& file)
-{
-	fileName = file;
-	count = 0;
-	fileContent.clear();
-	fileContent.push_back("");
-	openFile.open(file);
-	if(openFile.good() == true)
-	{
-		buffer<<openFile.rdbuf();
-		tempString = buffer.str();
-		for(unsigned int i = 0 ; i < tempString.length(); i++)
-		{
-			if(tempString[i] != '\n')
-			{
-				fileContent[count] += tempString[i];
-			}
-			else
-			{
-				count++;
-				fileContent.push_back("");
-			}
-		}
-	}
-	openFile.close();
-}
-
-//returns the name of the file set
-std::string LoadINI::getFileName()
-{
-	return fileName;
-}
-
 //returns if the given file exists
 bool LoadINI::fileExists(std::string const& file)
 {
+	std::ifstream openFile;
+	openFile.open(file);
 	if(openFile.good() == true)
 	{
 		return true;
@@ -55,73 +13,111 @@ bool LoadINI::fileExists(std::string const& file)
 	{
 		return false;
 	}
+	openFile.close();
 }
 
 //returns the whole file
-std::string LoadINI::getFile()
+std::string LoadINI::getWholeFile(std::string const& file)
 {
-	tempString = "";
-	for(unsigned int i =0 ; i < fileContent.size(); i++)
+	std::string tempString = "";
+	std::ifstream openFile;
+	std::stringstream buffer;
+	if(openFile.good() == true)
 	{
-		tempString += fileContent[i];
-		if(i < fileContent.size()-1)
-		{
-			tempString += "\n";
-		}
+		openFile.open(file);
+		buffer<<openFile.rdbuf();
+		tempString = buffer.str();
 	}
+	openFile.close();
 	return tempString;
 }
 
 //tests if given key is in the file
-bool LoadINI::inFile(std::string const& key)
+bool LoadINI::inFile(std::string const& file, std::string const& key)
 {
-	for(unsigned int i =0 ; i < fileContent.size(); i++)
+	std::string tempString = "";
+	std::ifstream openFile;
+	std::stringstream buffer;
+	openFile.open(file);
+	buffer<<openFile.rdbuf();
+
+	if(openFile.good() == true)
 	{
-		if(fileContent[i].find(key) != std::string::npos)
+		for(int i = 0; i < buffer.str().size(); ++i)
 		{
-			return true;
+			tempString.push_back(buffer.str()[i]);
+
+			if(tempString == key)
+			{
+				return true;
+			}
+
+			if(buffer.str()[i] == ' ' || buffer.str()[i] == '=' || buffer.str()[i] == '\n')
+			{
+				tempString.clear();
+			}
 		}
 	}
+
+	openFile.close();
 	return false;
 }
 
 //returns value of given key from file in a string format
-std::string LoadINI::getValue(std::string const& key)
+std::string LoadINI::getValue(std::string const& file, std::string const& key)
 {
-	count = 0;
-	for(unsigned int i =0 ; i < fileContent.size(); i++)
+	std::string tempString = "";
+	std::ifstream openFile;
+	std::stringstream buffer;
+	openFile.open(file);
+	buffer<<openFile.rdbuf();
+
+	if(openFile.good() == true)
 	{
-		if(fileContent[i].find(key) != std::string::npos)
+		for(int i = 0; i < buffer.str().size() + 1; ++i)
 		{
-			tempString = fileContent[i];
-			for(unsigned int ii =0 ; ii < tempString.size(); ii++)
+			tempString.push_back(buffer.str()[i]);
+
+			if(tempString == key)
 			{
-				if(tempString[ii] == '=' && count == 0)
+				tempString.clear();
+				for(int ii = i + 1; ii < buffer.str().size() + 1; ++ii)
 				{
-					count = 1;
+					if(buffer.str()[ii] == '\n' || ii == buffer.str().size())
+					{
+						return tempString;
+					}
+					else if(buffer.str()[ii] != ' ' && buffer.str()[ii] != '=' )
+					{
+						tempString.push_back(buffer.str()[ii]);
+					}
 				}
-				if(tempString[ii+1] != ' ' && count == 1)
-				{
-					tempString = tempString.substr(ii+1);
-					return tempString;
-				}
+				tempString.clear();
+			}
+
+			if(buffer.str()[i] == ' ' || buffer.str()[i] == '=' || buffer.str()[i] == '\n')
+			{
+				tempString.clear();
 			}
 		}
 	}
+	openFile.close();
 	return "key not found";
 }
 
 //updates a key in the file to a given value
-void LoadINI::updateFile(std::string const& key, std::string const& newValue)
+void LoadINI::updateFile(std::string const& file, std::string const& key, std::string const& newValue)
 {
-	for(unsigned int i =0 ; i < fileContent.size(); i++)
-	{
-		if(fileContent[i].find(key) != std::string::npos)
-		{
-			fileContent[i] = key + " " + "=" + " " + newValue;
-		}
-	}
-	writeFile.open(fileName);
-	writeFile<<getFile();
+	
+	std::ifstream openFile;
+	std::stringstream buffer;
+	openFile.open(file);
+	buffer<<openFile.rdbuf();
+	std::string tempString = buffer.str();
+	tempString.append(key + " = " + newValue);
+
+	std::ofstream writeFile;
+	writeFile.open(file);
+	writeFile<<tempString;
 	writeFile.close();
 }
